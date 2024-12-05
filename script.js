@@ -17,19 +17,23 @@ addButton.addEventListener("click", function (){
     todoItem.textContent = inputFieldValue;
     todoList.appendChild(todoItem);
 
+    // Creates a new button "Ferdig" to confirm the new elemented is completed.
     const finishedButton = document.createElement("button");
     finishedButton.textContent = "Ferdig";
     todoItem.appendChild(finishedButton);
 
+    // Creates a function to apply the css "line-trhough" function to the element when "ferdig" is pressed, to show the task as being completed, by being crossed out.
     finishedButton.addEventListener("click", function () {
         console.log("Ferdi knappen er trykket!");
         todoItem.style.textDecoration = "line-through";
     });
 
+    // Creates a new button "Slett" to the delete the created element.
     const deleteButton = document.createElement("button")
     deleteButton.textContent = "Slett";
     todoItem.appendChild(deleteButton);
 
+    // Apllies the .remove function that allows the "Slett" button to when pressed delete the element it is connected to.
     deleteButton.addEventListener("click", function () {
         console.log("Slett knappen er trykket!");
         todoItem.remove();
